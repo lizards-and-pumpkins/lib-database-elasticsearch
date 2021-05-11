@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+        bootstrap="bootstrap.php"
+        colors="true"
+        forceCoversAnnotation="true"
+        beStrictAboutOutputDuringTests="true"
+>
+    <testsuite name="Lizards and Pumpkins Elasticsearch Database Module Unit Tests">
+        <directory>Suites</directory>
+    </testsuite>
+    <coverage>
+        <include>
+            <directory suffix=".php">../../src</directory>
+        </include>
+    </coverage>
+</phpunit>
