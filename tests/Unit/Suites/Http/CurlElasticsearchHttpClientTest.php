@@ -88,7 +88,7 @@ class CurlElasticsearchHttpClientTest extends TestCase
         $this->client->update($documentId, $parameters);
 
         $this->assertArrayHasKey(CURLOPT_CUSTOMREQUEST, self::$curlOptionsSet);
-        $this->assertSame('PUT', self::$curlOptionsSet[CURLOPT_CUSTOMREQUEST]);
+        $this->assertSame('POST', self::$curlOptionsSet[CURLOPT_CUSTOMREQUEST]);
 
         $this->assertArrayHasKey(CURLOPT_POSTFIELDS, self::$curlOptionsSet);
         $this->assertSame(json_encode($parameters), self::$curlOptionsSet[CURLOPT_POSTFIELDS]);

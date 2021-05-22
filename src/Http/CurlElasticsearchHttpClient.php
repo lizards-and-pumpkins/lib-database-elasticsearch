@@ -29,7 +29,7 @@ class CurlElasticsearchHttpClient implements ElasticsearchHttpClient
         $url = sprintf('%s/%s', $this->constructUrl(ElasticsearchHttpClient::UPDATE_SERVLET), urlencode($id));
 
         $curlHandle = $this->createCurlHandle($url);
-        curl_setopt($curlHandle, CURLOPT_CUSTOMREQUEST, 'PUT');
+        curl_setopt($curlHandle, CURLOPT_CUSTOMREQUEST, 'POST');
         curl_setopt($curlHandle, CURLOPT_POSTFIELDS, json_encode($parameters));
 
         return $this->executeCurlRequest($curlHandle);

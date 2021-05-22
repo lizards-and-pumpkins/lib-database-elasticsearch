@@ -6,7 +6,7 @@ namespace LizardsAndPumpkins\Database\Elasticsearch\Http;
 
 interface ElasticsearchHttpClient
 {
-    const UPDATE_SERVLET = '';
+    const UPDATE_SERVLET = '_doc';
     const SEARCH_SERVLET = '_search';
     const CLEAR_SERVERLET = '_delete_by_query?refresh';
 
