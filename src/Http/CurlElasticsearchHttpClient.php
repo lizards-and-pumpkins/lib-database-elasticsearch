@@ -121,8 +121,14 @@ class CurlElasticsearchHttpClient implements ElasticsearchHttpClient
 
     private function validateResponse(array $response)
     {
-        if (isset($response['error'])) {
+        if (! isset($response['error'])) {
+            return;
+        }
+
+        if (isset($response['error']['reason'])) {
             throw new ElasticsearchException($response['error']['reason']);
         }
+
+        throw new ElasticsearchException($response['error']);
     }
 }

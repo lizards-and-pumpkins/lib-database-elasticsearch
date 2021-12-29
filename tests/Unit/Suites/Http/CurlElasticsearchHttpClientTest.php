@@ -159,6 +159,19 @@ class CurlElasticsearchHttpClientTest extends TestCase
         $this->client->select($parameters);
     }
 
+    public function testHandlesElasticsearchExceptionWithLessDetails(): void
+    {
+        $testExceptionMessage = 'foo';
+
+        self::$response = ['error' => $testExceptionMessage];
+
+        $this->expectException(ElasticsearchException::class);
+        $this->expectExceptionMessage($testExceptionMessage);
+
+        $parameters = [];
+        $this->client->select($parameters);
+    }
+
     public function testSuccessfulSelectRequestReturnsAnArray(): void
     {
         $parameters = [];
